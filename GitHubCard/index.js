@@ -37,14 +37,14 @@ const followersArray = [];
 
 
 
-const gitInfo = (imageUrl, name, username, location, followers, following, bio  ) => {
+const gitInfo = (imageUrl, profileName, username, userLocation, userFollowers, userFollowing, userBio  ) => {
 // variables
 
 const cardContainer = document.createElement('div').classList.add('.card');
 const profileImg = document.createElement('img');
 const cardInfo = document.createElement('div').classList.add('.card-info');
 const headThree = document.createElement('h3').classList.add('.name');
-const username = document.createElement('p');
+const userName = document.createElement('p');
 const location = document.createElement('p');
 const profile = document.createElement('p');
 const followers = document.createElement('p');
@@ -54,20 +54,20 @@ const bio = document.createElement('p');
 // Addtional attributes to elements
 
 profileImg.src = imageUrl;
-headThree.textContent = name;
-username.textContent = username;
-location.textContent = location;
+headThree.textContent = profileName;
+userName.textContent = username;
+location.textContent = userLocation;
 profile.textContent = (`Profile: {}`)// have to add link to this one. 
-followers.textContent = (`Followers:  ${followers}`);
-following.textContent = (`Following:  ${following}`);
-bio.textContent = (`Bio: ${bio}`);
+followers.textContent = (`Followers:  ${userFollowers}`);
+following.textContent = (`Following:  ${userFollowing}`);
+bio.textContent = (`Bio: ${userBio}`);
 
 
 // Append 
 cardContainer.appendChild(profileImg);
 cardContainer.appendChild(cardInfo);
 cardInfo.appendChild(headThree);
-cardInfo.appendChild(username);
+cardInfo.appendChild(userName);
 cardInfo.appendChild(location);
 cardInfo.appendChild(profile);
 cardInfo.appendChild(followers);
