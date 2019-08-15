@@ -35,8 +35,28 @@ axios
 
 const followersArray = [];
 
+
+
+const gitInfo = () => {
+// variables
+
+const cardContainer = document.createElement('div').classList.add('.card');
+const profileImg = document.createElement('img');
+const cardInfo = document.createElement('div').classList.add('.card-info');
+const headThree = document.createElement('h3').classList.add('.name');
+const username = document.createElement('p');
+const location = document.createElement('p');
+const profile = document.createElement('p');
+const followers = document.createElement('p');
+const following = document.createElement('p');
+const bio = document.createElement('p');
+
+
+}
+
 /* Step 3: Create a function that accepts a single object as its only argument,
           Using DOM methods and properties, create a component that will return the following DOM element:
+
 
 <div class="card">
   <img src={image url of user} />
