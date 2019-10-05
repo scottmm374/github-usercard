@@ -3,6 +3,15 @@
            https://api.github.com/users/<your name>
 */
 
+axios
+.get('https://api.github.com/users/scottmm374')
+.then((res)=> {
+  console.log(res);
+})
+.catch((err) => {
+  console.log(err);
+})
+
 /* Step 2: Inspect and study the data coming back, this is YOUR 
    github info! You will need to understand the structure of this 
    data in order to use it to build your component function 
@@ -26,8 +35,51 @@
 
 const followersArray = [];
 
+
+
+const gitInfo = (imageUrl, profileName, username, userLocation, userFollowers, userFollowing, userBio  ) => {
+// variables
+
+const cardContainer = document.createElement('div').classList.add('.card');
+const profileImg = document.createElement('img');
+const cardInfo = document.createElement('div').classList.add('.card-info');
+const headThree = document.createElement('h3').classList.add('.name');
+const userName = document.createElement('p');
+const location = document.createElement('p');
+const profile = document.createElement('p');
+const followers = document.createElement('p');
+const following = document.createElement('p');
+const bio = document.createElement('p');
+
+// Addtional attributes to elements
+
+profileImg.src = imageUrl;
+headThree.textContent = profileName;
+userName.textContent = username;
+location.textContent = userLocation;
+profile.textContent = (`Profile: {}`)// have to add link to this one. 
+followers.textContent = (`Followers:  ${userFollowers}`);
+following.textContent = (`Following:  ${userFollowing}`);
+bio.textContent = (`Bio: ${userBio}`);
+
+
+// Append 
+cardContainer.appendChild(profileImg);
+cardContainer.appendChild(cardInfo);
+cardInfo.appendChild(headThree);
+cardInfo.appendChild(userName);
+cardInfo.appendChild(location);
+cardInfo.appendChild(profile);
+cardInfo.appendChild(followers);
+cardInfo.appendChild(following);
+cardInfo.appendChild(bio);
+
+
+}
+
 /* Step 3: Create a function that accepts a single object as its only argument,
           Using DOM methods and properties, create a component that will return the following DOM element:
+
 
 <div class="card">
   <img src={image url of user} />
